@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        body {
+            background-color: rgb(61, 183, 144);
+        }
+
+        section {
+            background-color:#3330E4;
+            border: 2px double black;
+            width: 40%;
+            margin: 10% auto;
+        }
+
+        h1,
+        div,
+        h2 {
+            text-align: center;
+            color: antiquewhite;
+            font-family: 'Gochi Hand', cursive;
+        }
+
+        footer {
+            margin-top: 2%;
+            /* color: ; */
+            text-align: left;
+            font-size: x-small;
+            background-color: #FF869E;
+        }
+
+        h2 {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h2 class="title">Gaming world</h2>
+        <div id="head">
+            <h1 id="heading">Refresh me</h1>
+            <h4>player 1 choose <div class="n1">n1</div>
+            </h4>
+            <h4>
+                player 2 choose <div class="n2">n2</div>
+
+            </h4>
+        </div>
+        <div><button type="button" onClick="refreshPage()">Try Again</button></div>
+        <footer>All Rights reserved @The_Abhi_pandey ©2022
+            <a href="https://wa.me/+919794298928"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png"
+                    alt="whatsapp me" height="20"></a>
+        </footer>
+    </section>
+    <script>
+        function refreshPage() {
+            window.location.reload();
+        } // refresh page
+
+
+        var num1 = Math.floor(Math.random() * 6) + 1;
+        var num2 = Math.floor(Math.random() * 6) + 1;
+
+        var ins1 = document.querySelector(".n1").innerHTML = num1;
+        var ins2 = document.querySelector(".n2").innerHTML = num2;
+
+        if (ins1 > ins2) {
+            document.querySelector("h1").innerHTML = "player 1 win🌹😎";
+        }
+        else if (ins2 > ins1) {
+            document.querySelector("h1").innerHTML = "player 2 win😍😎";
+
+        }
+        else {
+            document.querySelector("h1").innerHTML = "Draw !!!😮😮"
+        }
+
+    </script>
+</body>
+
+</html>
